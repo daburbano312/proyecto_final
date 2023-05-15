@@ -17,7 +17,7 @@ defmodule SearchPlayersApp.Teams.Team do
   @doc false
   def changeset(team, attrs) do
     team
-    |> cast(attrs, [:name, :division, :country])
-    |> validate_required([:name, :division, :country])
+    |> cast(attrs, [:name, :division, :country, :player_id])
+    |> validate_required([:name, :division, :country, :player_id])
   end
 end

@@ -18,7 +18,7 @@ defmodule SearchPlayersApp.Teams do
 
   """
   def list_teams do
-    Repo.all(Team) |> Repo.preload(:players)
+    Repo.all(Team) |> Repo.preload(:player)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule SearchPlayersApp.Teams do
       ** (Ecto.NoResultsError)
 
   """
-  def get_team!(id), do: Repo.get!(Team, id) |> Repo.preload(:players)
+  def get_team!(id), do: Repo.get!(Team, id) |> Repo.preload(:player)
 
   @doc """
   Creates a team.
